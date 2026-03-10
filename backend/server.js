@@ -215,9 +215,12 @@ app.get('/{*path}', (_req, res) => {
   else res.json({ message: 'ResumeIQ API — visit /api/health' });
 });
 
-app.listen(PORT, () => {
-  console.log(`\n🚀 ResumeIQ backend running at http://localhost:${PORT}`);
-  console.log(`   Open frontend/index.html in your browser\n`);
-});
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => {
+    console.log(`🚀 ResumeIQ backend running at http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
 
 module.exports = app;

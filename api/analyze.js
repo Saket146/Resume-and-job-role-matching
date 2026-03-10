@@ -33,4 +33,8 @@ export default async function handler(req, res) {
   } catch (err) {
     res.status(500).json({ error: 'Analysis failed: ' + err.message });
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 83473c74c8de6c15a542ff97d399a18298f18e0d
